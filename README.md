@@ -13,3 +13,5 @@ Mockup for yard sale 🏷 ecommerce 🛒 web application.
 ## Project link
 
 Github: [https://zearkiatos.github.io/yard-sale-html-web/](https://zearkiatos.github.io/yard-sale-html-web/)
+
+Gitlab 🦊: [https://caprilespe.gitlab.io/yard-sale-html-web/](https://caprilespe.gitlab.io/yard-sale-html-web/)
