@@ -1,0 +1,47 @@
+image: node:15-alpine
+stages:
+  - docker
+  - build
+  - deploy
+
+build-docker:
+  image: docker:latest
+  variables:
+    DOCKER_DRIVER: overlay
+    CRYPTOGRAPHY_DONT_BUILD_RUST: 1
+  services:
+  - docker:dind
+  stage: docker
+  environment: staging
+  script:
+    - echo "Build docker 🐳"
+    - docker build . -t=yard-sale-html-web:glb-${CI_PIPELINE_IID}
+
+build-app:
+  stage: build
+  environment: staging
+  dependencies:
+    - build-docker
+  script:
+    - echo "Deploy a review app 🛠"
+    - make build
+  artifacts:
+    expire_in: 1hr
+    paths:
+      - dist
+
+pages:
+  stage: deploy
+  environment: staging
+  dependencies:
+    - build-app
+  script:
+    - echo "Deploy a review app 🚀"
+    - rm -rf public
+    - cp dist/index.html dist/404.html
+    - mv dist public
+  artifacts:
+    paths:
+      - public
+  only:
+    - branches

@@ -1,3 +1,3 @@
 build:
 	mkdir -p dist
-	cp src/* dist/
+	cp -a src/* dist/

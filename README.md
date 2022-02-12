@@ -1,6 +1,8 @@
 # Description
 Mockup for yard sale 🏷 ecommerce 🛒 web application.
 
+![Github](https://github.com/zearkiatos/yard-sale-html-web/actions/workflows/action.yml/badge.svg)
+
 # Make with
 
 [![HTML5](https://img.shields.io/badge/HTML5-e56034?style=for-the-badge&logo=html5&logoColor=white&labelColor=000000)]()
